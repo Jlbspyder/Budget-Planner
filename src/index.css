@@ -1,0 +1,262 @@
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+:root {
+  --box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  font-family: 'Lato', sans-serif;
+  transition: all 0.2s ease-in-out;
+}
+body.darkmode {
+  background: hsl(200, 15%, 8%);
+  color: #fff;
+  transition: all 0.2s ease-in-out;
+}
+
+.container {
+  margin: 30px auto;
+  padding: 20px;
+  min-width: 700px;
+  background-color: #fff;
+  border: 1px solid gray;
+  border-radius: 5px;
+  transition: all 0.2s ease-in-out;
+}
+.container.darkmode {
+  background-color: hsl(200, 15%, 8%);
+  color: #fff;
+  border: 1px solid hsl(0, 2%, 20%);
+  transition: all 0.2s ease-in-out;
+}
+
+h1 {
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+h2 {
+  text-transform: uppercase;
+  word-spacing: 5px;
+}
+h3 {
+  border-bottom: 1px solid #bbb;
+  margin: 40px 0 10px;
+}
+
+h4 {
+  margin: 0;
+  text-transform: uppercase;
+}
+h5 {
+  margin: 0;
+}
+small {
+  margin-left: 2px;
+}
+.header {
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.mode {
+float: right;
+cursor: pointer;
+}
+
+.inc-exp-container {
+  background-color: #fff;
+  box-shadow: var(--box-shadow);
+  padding: 20px;
+  display: flex;
+  border-radius: 5px;
+  justify-content: space-between;
+  margin: 20px 0;
+  transition: all 0.2s ease-in-out;
+}
+.inc-exp-container.darkmode {
+  background-color: hsl(207, 26%, 17%);
+  transition: all 0.2s ease-in-out;
+}
+
+.inc-exp-container > div {
+  flex: 1;
+  text-align: center;
+}
+
+.inc-exp-container > div:first-of-type {
+  border-right: 1px solid #dedede;
+}
+
+.money {
+  font-size: 20px;
+  letter-spacing: 1px;
+  margin: 5px 0;
+}
+
+.money.plus {
+  color: #2ecc71;
+}
+
+.money.minus {
+  color: #c0392b;
+}
+
+label {
+  display: inline-block;
+  margin: 10px 0;
+}
+.label.error {
+  color:#c0392b;
+}
+.error {
+  color:#c0392b;
+}
+
+.input {
+  border: 1px solid hsl(199, 10%, 55%);
+  background-color: hsl(207, 26%, 17%);
+  border-radius: 2px;
+  color: #fff;
+  display: block;
+  border-radius: 5px;
+  font-size: 16px;
+  padding: 10px;
+  width: 100%;
+  transition: all 0.2s ease-in-out;
+}
+.input-error {
+  border: 1px solid #c0392b;
+}
+
+.input.darkmode {
+  background-color: #fff;
+  color: #000;
+  transition: all 0.2s ease-in-out;
+}
+.btn {
+  cursor: pointer;
+  background-color: #2ecc71;
+  box-shadow: var(--box-shadow);
+  color: #000;
+  border: 0;
+  display: block;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 30px 0 30px;
+  padding: 10px;
+  width: 100%;
+}
+
+.btn.darkmode {
+  background-color: #360ad4;
+  color: #fff;
+}
+.btn:focus,
+.delete-btn:focus {
+  outline: 0;
+}
+.btn.darkmode:hover {
+  background-color: #472da7;
+  animation: zoom 0.5s ease-in-out;
+}
+.btn:hover {
+  background-color: #6deca2;
+  animation: zoom 0.5s ease-in-out;
+}
+
+.list {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 40px;
+}
+
+.list li {
+  background-color: #fff;
+  box-shadow: var(--box-shadow);
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  transition: all 0.2s ease-in-out;
+}
+.list.darkmode li {
+  background-color: hsl(207, 26%, 17%);
+  transition: all 0.2s ease-in-out;
+}
+
+.list li.plus {
+  border-right: 5px solid #2ecc71;
+}
+
+.list li.minus {
+  border-right: 5px solid #c0392b;
+}
+
+.delete-btn {
+  cursor: pointer;
+  background-color: #e74c3c;
+  border: 0;
+  color: #fff;
+  font-size: 20px;
+  line-height: 20px;
+  padding: 2px 4px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(-100%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.list li:hover .delete-btn {
+  opacity: 1;
+}
+
+@keyframes zoom {
+  0% {
+    transform: scale(0.97);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 760px) {
+  body {
+    background-color: #fff;
+  }
+  body.darkmode {
+    background-color: hsl(200, 15%, 8%);
+  }
+  h2 {
+    text-transform: capitalize;
+    word-spacing: 2px;
+  }
+  .container {
+    min-width: 350px;
+  }
+  .header {
+    min-height: 120px;
+    flex-direction: column;
+    align-items: start;
+  }
+  .mode {
+    margin-top: 23px;
+  }
+}
