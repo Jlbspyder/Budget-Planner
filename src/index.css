@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow&family=Barlow+Condensed&family=Bellefair&display=swap');
 
 :root {
   --box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
@@ -16,7 +16,7 @@ body {
   justify-content: center;
   min-height: 100vh;
   margin: 0;
-  font-family: 'Poppins', helvetica, sans-serif;
+  font-family: 'Barlow', sans-serif;
   transition: all 0.2s ease-in-out;
 }
 body.darkmode {
