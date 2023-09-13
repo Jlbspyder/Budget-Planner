@@ -64,7 +64,7 @@ export const AddExpense = ({ lightmode }) => {
         <div className="form-control">
           <label className={error.amount ? "error" : "label"} htmlFor="amount">
             Amount 
-            <small>(negative - expense, positive - income)</small>
+            <small>(negative - expense, positive - inflow)</small>
           </label>
           <input
             type="number"
