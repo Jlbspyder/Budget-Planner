@@ -49,7 +49,7 @@ export const Balance = ({ lightmode }) => {
         <h1>{moneyFormatter(total)}</h1>
       </div>
       {avatar && (
-        <div>
+        <div className="avatar">
           <img
             src={avatar}
             alt="avatar"
