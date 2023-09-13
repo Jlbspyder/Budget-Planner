@@ -76,6 +76,7 @@ small {
 .sign-in {
   text-align: center;
   text-transform: capitalize;
+  font-size: 1.2rem;
 }
 .header {
   min-height: 100px;
@@ -318,6 +319,9 @@ label {
     width: 60px;
     height: 60px;
     margin-top: 10px;
+  }
+   .sign-in {
+    font-size: 0.9rem;
   }
   .sign-out {
     margin-top: 5px;
