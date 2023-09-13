@@ -11,7 +11,7 @@ This is a simple budget planner that allows users to be able to:
 
 ### Links
 
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [https://jlb-budget-planner.netlify.app/](https://jlb-budget-planner.netlify.app/)
 
 ### Built with
 
