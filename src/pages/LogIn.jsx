@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { auth, provider } from "../pages/firebase-config";
+import { auth, provider } from "../auth/firebase-config";
 import { signInWithPopup } from "firebase/auth";
 import { BsMoon, BsMoonFill } from "react-icons/bs";
 

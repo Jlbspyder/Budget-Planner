@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { signOut } from "firebase/auth";
 import { GlobalContext } from "../context/GlobalState";
 import { useGetUserInfo } from "../hooks/useGetUserInfo";
-import { auth } from "../pages/firebase-config";
+import { auth } from "../auth/firebase-config";
 import { useNavigate } from "react-router-dom";
 
 //Money formatter function
