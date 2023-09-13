@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
 
 :root {
   --box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
@@ -16,7 +16,7 @@ body {
   justify-content: center;
   min-height: 100vh;
   margin: 0;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Poppins', helvetica, sans-serif;
   transition: all 0.2s ease-in-out;
 }
 body.darkmode {
@@ -59,21 +59,51 @@ h4 {
   margin: 0;
   text-transform: uppercase;
 }
-h5 {
+h5, h6 {
   margin: 0;
 }
+
 small {
   margin-left: 2px;
 }
+.log-in {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.sign-in {
+  text-align: center;
+  text-transform: capitalize;
+}
 .header {
-  height: 100px;
+  min-height: 100px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 .mode {
-float: right;
-cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+}
+.mode.set {
+  float: right;
+}
+.moon, .fill {
+  cursor: pointer;
+}
+
+.profile-pix {
+  border: 2px solid gray;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  aspect-ratio: 1;
+}
+
+.profile-pix.darkmode {
+  border: 2px solid #fff ;
 }
 
 .inc-exp-container {
@@ -161,6 +191,24 @@ label {
   width: 100%;
 }
 
+.sign {
+  width: 50%;
+}
+.sign.darkmode {
+  background-color: #360ad4;
+}
+
+.sign-out {
+  padding: 5px;
+  font-size: 10px;
+  margin: 0;
+}
+.sign-out.darkmode {
+  background-color: #360ad4;
+}
+.sign-out.darkmode:hover {
+  background-color: #472da7;
+}
 .btn.darkmode {
   background-color: #360ad4;
   color: #fff;
@@ -245,18 +293,22 @@ label {
     background-color: hsl(200, 15%, 8%);
   }
   h2 {
-    text-transform: capitalize;
+    text-transform: uppercase;
     word-spacing: 2px;
   }
   .container {
     min-width: 350px;
   }
   .header {
-    min-height: 120px;
-    flex-direction: column;
-    align-items: start;
+    min-height: 150px;
+    flex-direction: row;
+    align-items: center;
   }
   .mode {
-    margin-top: 23px;
+    flex-direction: row-reverse;
+  }
+  .profile-pix {
+    width: 60px;
+    height: 60px;
   }
 }

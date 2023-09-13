@@ -1,4 +1,5 @@
 import React, { useState, useContext } from "react";
+import { useAddActivity } from "../hooks/useAddActivity";
 import { GlobalContext } from "../context/GlobalState";
 
 export const AddExpense = ({ lightmode }) => {
@@ -7,7 +8,7 @@ export const AddExpense = ({ lightmode }) => {
   const [error, setError] = useState({});
 
   const { addActivity } = useContext(GlobalContext);
-
+  const { addTransaction } = useAddActivity();
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -51,11 +52,15 @@ export const AddExpense = ({ lightmode }) => {
       <h3>Add new activity</h3>
       <form onSubmit={onSubmit}>
         <div className="form-control">
-          <label className={error.text ? "error" : "label"} htmlFor="text">Text</label>
+          <label className={error.text ? "error" : "label"} htmlFor="text">
+            Text
+          </label>
           <input
             type="text"
             value={text}
-            className={`input ${lightmode ? "darkmode" : ""} ${error.text ? "input-error" : ""}`}
+            className={`input ${lightmode ? "darkmode" : ""} ${
+              error.text ? "input-error" : ""
+            }`}
             onChange={(e) => setText(e.target.value)}
             placeholder="Enter text..."
           />
@@ -63,19 +68,23 @@ export const AddExpense = ({ lightmode }) => {
         </div>
         <div className="form-control">
           <label className={error.amount ? "error" : "label"} htmlFor="amount">
-            Amount 
-            <small>(negative - expense, positive - income)</small>
+            Amount
+            <small>(negative - expense, positive - inflow)</small>
           </label>
           <input
             type="number"
             value={amount}
-            className={`input ${lightmode ? "darkmode" : ""} ${error.amount ? "input-error" : ""}`}
+            className={`input ${lightmode ? "darkmode" : ""} ${
+              error.amount ? "input-error" : ""
+            }`}
             onChange={(e) => setAmount(e.target.value)}
             placeholder="Enter amount..."
           />
           {error.amount && <small className="error">{error.amount}</small>}
         </div>
-        <button className={`btn ${lightmode ? "" : "darkmode"}`} >Add Activity</button>
+        <button className={`btn ${lightmode ? "" : "darkmode"}`}>
+          Add Activity
+        </button>
       </form>
     </>
   );

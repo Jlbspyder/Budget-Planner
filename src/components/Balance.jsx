@@ -1,5 +1,9 @@
 import React, { useContext } from "react";
+import { signOut } from "firebase/auth";
 import { GlobalContext } from "../context/GlobalState";
+import { useGetUserInfo } from "../hooks/useGetUserInfo";
+import { auth } from "../pages/firebase-config";
+import { useNavigate } from "react-router-dom";
 
 //Money formatter function
 function moneyFormatter(num) {
@@ -18,8 +22,20 @@ function moneyFormatter(num) {
   );
 }
 
-export const Balance = () => {
+export const Balance = ({ lightmode }) => {
   const { activities } = useContext(GlobalContext);
+  const { avatar } = useGetUserInfo();
+  const navigate = useNavigate();
+
+  const handleLogOut = async () => {
+    try {
+      await signOut(auth);
+      localStorage.clear();
+      navigate("/");
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   const amounts = activities.map((activity) => activity.amount);
 
@@ -29,11 +45,24 @@ export const Balance = () => {
     <div className="header">
       <div>
         <h2>Budget Planner</h2>
-      </div>
-      <div>
         <h5>Your Balance</h5>
         <h1>{moneyFormatter(total)}</h1>
       </div>
+      {avatar && (
+        <div>
+          <img
+            src={avatar}
+            alt="avatar"
+            className={`profile-pix ${lightmode ? "" : "darkmode"}`}
+          />
+          <button
+            className={`btn sign-out ${lightmode ? "" : "darkmode"}`}
+            onClick={handleLogOut}
+          >
+            Log Out
+          </button>
+        </div>
+      )}
     </div>
   );
 };
