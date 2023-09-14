@@ -20,13 +20,15 @@ export const LogIn = ({ mode, lightmode }) => {
 
   return (
     <>
-      <div className="mode set" onClick={mode}>
+       <div className="mode" onClick={mode}>
         {lightmode ? (
           <BsMoon className="moon" />
         ) : (
           <BsMoonFill className="fill" />
         )}
+        <h2>Budget Planner</h2>
       </div>
+      
       <div className="log-in">
         <div className="sign-in">Please sign in with google to continue</div>
         <button
