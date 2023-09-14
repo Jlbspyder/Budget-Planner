@@ -194,9 +194,11 @@ label {
 
 .sign {
   width: 50%;
+  transition: all 0.2s ease-in-out;
 }
 .sign.darkmode {
   background-color: #360ad4;
+  transition: all 0.2s ease-in-out;
 }
 
 .sign-out {
