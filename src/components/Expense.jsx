@@ -1,22 +1,6 @@
 import React, { useContext } from "react";
 import { GlobalContext } from "../context/GlobalState";
 
-//Money formatter function
-function moneyFormatter(num) {
-  let p = num.toFixed(2).split(".");
-  return (
-    "$ " +
-    p[0]
-      .split("")
-      .reverse()
-      .reduce(function (acc, num, i) {
-        return num === "-" ? acc : num + (i && !(i % 3) ? "," : "") + acc;
-      }, "") +
-    "." +
-    p[1]
-  );
-}
-
 export const Expense = ({ activity }) => {
   const { deleteActivity } = useContext(GlobalContext);
 
@@ -24,10 +8,9 @@ export const Expense = ({ activity }) => {
 
   return (
     <li className={activity.amount < 0 ? "minus" : "plus"}>
-      {activity.text}{" "}
+      {activity.description}{" "}
       <span>
-        {sign}
-        {moneyFormatter(activity.amount)}
+        {sign}${Math.abs(activity.amount)}
       </span>
       <button
         onClick={() => deleteActivity(activity.id)}
