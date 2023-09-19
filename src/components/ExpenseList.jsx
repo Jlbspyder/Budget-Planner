@@ -1,10 +1,9 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Expense } from "./Expense";
-
-import { GlobalContext } from "../context/GlobalState";
+import { useGetActivities } from "../hooks/useGetActivities";
 
 export const ExpenseList = ({ lightmode }) => {
-  const { activities } = useContext(GlobalContext);
+  const { activities } = useGetActivities()
 
   return (
     <>
@@ -17,3 +16,4 @@ export const ExpenseList = ({ lightmode }) => {
     </>
   );
 };
+
