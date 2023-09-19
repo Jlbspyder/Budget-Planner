@@ -1,11 +1,12 @@
-import { useNavigate } from "react-router-dom";
-import { auth, provider } from "../auth/firebase-config";
+import { useNavigate, Navigate } from "react-router-dom";
+import { auth, provider } from "../pages/firebase-config";
 import { signInWithPopup } from "firebase/auth";
 import { BsMoon, BsMoonFill } from "react-icons/bs";
+import { useGetUserInfo } from "../hooks/useGetUserInfo";
 
 export const LogIn = ({ mode, lightmode }) => {
   const navigate = useNavigate();
-
+  const { isAuth } = useGetUserInfo()
   const handleClick = async () => {
     const res = await signInWithPopup(auth, provider);
     const authInfo = {
@@ -18,9 +19,13 @@ export const LogIn = ({ mode, lightmode }) => {
     navigate("/homepage");
   };
 
+  if (isAuth) {
+    return <Navigate to='/homepage' />
+  }
+
   return (
     <>
-       <div className="mode" onClick={mode}>
+      <div className="mode" onClick={mode}>
         {lightmode ? (
           <BsMoon className="moon" />
         ) : (
