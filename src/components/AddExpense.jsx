@@ -1,5 +1,6 @@
 import React, { useState, useContext } from "react";
 import { useAddActivity } from "../hooks/useAddActivity";
+import { useGetUserInfo } from "../hooks/useGetUserInfo";
 import { GlobalContext } from "../context/GlobalState";
 
 export const AddExpense = ({ lightmode }) => {
@@ -8,6 +9,7 @@ export const AddExpense = ({ lightmode }) => {
   const [error, setError] = useState({});
 
   const { addActivity } = useContext(GlobalContext);
+  const { userID } = useGetUserInfo();
   const { addTransaction } = useAddActivity();
 
   const onSubmit = (e) => {
@@ -36,12 +38,13 @@ export const AddExpense = ({ lightmode }) => {
       }, 3000);
     } else {
       const newActivity = {
-        id: Math.floor(Math.random() * 100000000),
+        id: userID,
         text,
-        amount: +amount,
+        amount,
       };
 
       addActivity(newActivity);
+      addTransaction({ description: text, amount });
       setText("");
       setAmount("");
     }
