@@ -24,7 +24,7 @@ export const Balance = ({ lightmode }) => {
 
   const total = amounts.reduce((acc, item) => (acc += item), 0);
 
-  const sign = total < 0 ? "-" : "+";
+  const sign = total < 0 ? "-" : "";
 
   return (
     <div className="header">
