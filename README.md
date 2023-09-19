@@ -19,6 +19,7 @@ This is a simple budget planner that allows users to be able to:
 - CSS custom properties
 - Flexbox
 - Mobile-first workflow
+- Firebase
 - [React](https://reactjs.org/) - JS library
 
 ## Author
