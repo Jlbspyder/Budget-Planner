@@ -6,7 +6,7 @@ import { database } from "../pages/firebase-config";
 export const useGetActivities = () => {
     const [activities, setActivities] = useState([])
     
-    const activityRef = collection(db, "activities");
+    const activityRef = collection(database, "activities");
     const {userID} = useGetUserInfo()
   
     const getActivity = async () => {
