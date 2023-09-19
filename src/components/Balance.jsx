@@ -2,7 +2,7 @@ import React from "react";
 import { signOut } from "firebase/auth";
 import { useGetUserInfo } from "../hooks/useGetUserInfo";
 import { useGetActivities } from "../hooks/useGetActivities";
-import { auth } from "../pages/firebase-config";
+import { auth } from "../auth/firebase-config";
 import { useNavigate } from "react-router-dom";
 
 export const Balance = ({ lightmode }) => {
