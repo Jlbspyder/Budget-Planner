@@ -24,12 +24,14 @@ export const Balance = ({ lightmode }) => {
 
   const total = amounts.reduce((acc, item) => (acc += item), 0);
 
+  const sign = total < 0 ? "-" : "+";
+
   return (
     <div className="header">
       <div>
         <h2>Budget Planner</h2>
         <h5>Your Balance</h5>
-        <h1>${total}</h1>
+        <h1>{sign}${Math.abs(total)}</h1>
       </div>
       {avatar && (
         <div className="avatar">
