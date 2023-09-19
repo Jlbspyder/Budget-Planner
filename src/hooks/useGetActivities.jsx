@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { query, collection, where, onSnapshot, orderBy } from 'firebase/firestore'
 import { useGetUserInfo } from "../hooks/useGetUserInfo";
-import { db } from "../pages/firebase-config";
+import { database } from "../pages/firebase-config";
 
 export const useGetActivities = () => {
     const [activities, setActivities] = useState([])
