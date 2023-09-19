@@ -1,5 +1,5 @@
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
-import { database } from "../pages/firebase-config";
+import { database } from "../auth/firebase-config";
 import { useGetUserInfo } from "./useGetUserInfo";
 
 export const useAddActivity = () => {
